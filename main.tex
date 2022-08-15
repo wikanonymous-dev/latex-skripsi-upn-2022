@@ -13,11 +13,32 @@
 \raggedbottom
 
 \usepackage{packages/thesis.package}
+\usepackage{xifthen}
 
 \begin{document}
-  \linespread{1.15}
-  
+  % Initiate all document setup and configuration
+  \pagenumbering{roman}
   \input{config/thesis.const}
+
+  % Load cover page
   \include{src/front-matter/cover}
-  
+  % Load title cover page
+  \include{src/front-matter/title_cover}
+
+  % Load endorsement page
+  \addChapter{HALAMAN PENGESAHAN PEMBIMBING}
+  \include{src/front-matter/seminar_endorsement}
+
+  % Load examiner endorsement page
+  \addChapter{HALAMAN PENGESAHAN PENGUJI}
+  \include{src/front-matter/exam_endorsement}
+
+  % Load free plagiarism page
+  \addChapter{PERNYATAAN BEBAS PLAGIASI}
+  \include{src/front-matter/free_plagiarism}
+
+  % Load original statement page
+  \addChapter{SURAT PERNYATAAN KARYA ASLI TUGAS AKHIR}
+  \include{src/front-matter/original_statement}
+
 \end{document}
